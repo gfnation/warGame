@@ -60,6 +60,7 @@ namespace warGame
         Rectangle playerRect = new Rectangle(1,1,1,1);
         Rectangle compRect = new Rectangle(100, 50, compWidth, compHeight);
         
+        
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -75,7 +76,7 @@ namespace warGame
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            
             base.Initialize();
         }
 
@@ -207,11 +208,11 @@ namespace warGame
 
             base.Draw(gameTime);
         }
+
         
-        public void cardValues(cardTexture){
             
             
         }
         
-    }
+    
 }

@@ -1,0 +1,3 @@
+O:\Programming\warGame\warGame\warGameContent\obj\x86\Debug\warGameContent.contentprojResolveAssemblyReference.cache
+E:\Programming\warGame\warGame\warGameContent\obj\x86\Debug\warGameContent.contentprojResolveAssemblyReference.cache
+I:\Programming\warGame\warGame\warGameContent\obj\x86\Debug\warGameContent.contentprojResolveAssemblyReference.cache
