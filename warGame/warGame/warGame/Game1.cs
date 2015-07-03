@@ -25,6 +25,8 @@ namespace warGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        
+
 
 
         //Club cards
@@ -51,19 +53,19 @@ namespace warGame
         static int compWidth, playerWidth;
         
         //Place the 2 decks across from each other
-        static Vector2 playerDeck = new Vector2(250.0f, 450.0f);
-        Vector2 compDeck = new Vector2(250.0f, 50.0f);
+        Vector2 playerDeck = new Vector2(10.0f, 270.0f);
+        Vector2 compDeck = new Vector2(1260.0f, 270.0f);
         
 
 
-        //Rectangle for Computer and Player Deck
-        Rectangle playerRect = new Rectangle(1,1,1,1);
-        Rectangle compRect = new Rectangle(100, 50, compWidth, compHeight);
         
         
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferWidth = 1400;
+            graphics.PreferredBackBufferHeight = 700;
+            graphics.ApplyChanges();
             Content.RootDirectory = "Content";
         }
 
@@ -76,6 +78,9 @@ namespace warGame
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+
+            //Make the mouse visible
+            IsMouseVisible = true;
             
             base.Initialize();
         }
@@ -201,8 +206,8 @@ namespace warGame
 
             // TODO: Add your drawing code here
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
-            spriteBatch.Draw(clubAce, playerRect, Color.White);
-            spriteBatch.Draw(compBack, compRect, Color.White);
+            spriteBatch.Draw(playerBack, playerDeck, Color.White);
+            spriteBatch.Draw(compBack, compDeck, Color.White);
             spriteBatch.End();
 
 

@@ -1,0 +1,2 @@
+This project is just to practice coding. I am using free artwork downloaded from http://opengameart.org/content/boardgame-pack.
+The license has benn added to this directory. Please check out Kenney's site.
