@@ -15,6 +15,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
+
 namespace warGame
 {
     /// <summary>
@@ -56,8 +57,46 @@ namespace warGame
         Vector2 playerDeck = new Vector2(10.0f, 270.0f);
         Vector2 compDeck = new Vector2(1260.0f, 270.0f);
         
+        //give numerical values to the cards + suit 
+        //11= Jack, 12=Queen, 13=King 1=Ace
+        //s=spade, h= heart, d=diamond, c=clubs
+        
+        //first spades
+        string s1 = "s1";
+        string s2 = "s2";
+        string s3 = "s3";
+        string s4 = "s4";
+        string s5 = "s5";
+        string s6 = "s6";
+        string s7 = "s7";
+        string s8 = "s8";
+        string s9 = "s9";
+        string s10 = "s10";
+        string sJack = "s11";
+        string sQueen = "s12";
+        string sKing = "s13";
+
+        //Hearts
+        string h1 = "h1"; string h2 = "h2"; string h3 = "h3"; string h4 = "h4";
+        string h5 = "h5"; string h6 = "h6"; string h7 = "h7"; string h8 = "h8";
+        string h9 = "h9"; string h10 = "h10"; string hJack = "h11"; string hQueen = "h12"; string hKing = "k13";
+
+        //diamonds
+        string d1 = "d1"; string d2 = "d2"; string d3 = "d3"; string d4 = "d4";
+        string d5 = "d5"; string d6 = "d6"; string d7 = "d7"; string d8 = "d8";
+        string d9 = "d9"; string d10 = "d10"; string dJack = "d11"; string dQueen = "d12"; string dKing = "d13";
+
+        //Now clubs
+        string c1 = "c1"; string c2 = "c2"; string c3 = "c3"; string c4 = "c4";
+        string c5 = "c5"; string c6 = "c6"; string c7 = "c7"; string c8 = "c8";
+        string c9 = "c9"; string c10 = "c10"; string cJack = "c11"; string cQueen = "c12"; string cKing = "c13";
 
 
+
+
+
+
+        
         
         
         public Game1()
@@ -214,6 +253,14 @@ namespace warGame
             base.Draw(gameTime);
         }
 
+        
+        
+        /*
+        public void cardShuffle()
+        {
+
+        }
+        */
         
             
             
