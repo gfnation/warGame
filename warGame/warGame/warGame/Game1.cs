@@ -62,39 +62,42 @@ namespace warGame
         //s=spade, h= heart, d=diamond, c=clubs
         
         //first spades
-        string s1 = "s1";
-        string s2 = "s2";
-        string s3 = "s3";
-        string s4 = "s4";
-        string s5 = "s5";
-        string s6 = "s6";
-        string s7 = "s7";
-        string s8 = "s8";
-        string s9 = "s9";
-        string s10 = "s10";
-        string sJack = "s11";
-        string sQueen = "s12";
-        string sKing = "s13";
+        static string s1 = "s1";
+        static string s2 = "s2";
+        static string s3 = "s3";
+        static string s4 = "s4";
+        static string s5 = "s5";
+        static string s6 = "s6";
+        static string s7 = "s7";
+        static string s8 = "s8";
+        static string s9 = "s9";
+        static string s10 = "s10";
+        static string sJack = "s11";
+        static string sQueen = "s12";
+        static string sKing = "s13";
 
         //Hearts
-        string h1 = "h1"; string h2 = "h2"; string h3 = "h3"; string h4 = "h4";
-        string h5 = "h5"; string h6 = "h6"; string h7 = "h7"; string h8 = "h8";
-        string h9 = "h9"; string h10 = "h10"; string hJack = "h11"; string hQueen = "h12"; string hKing = "k13";
+        static string h1 = "h1"; static string h2 = "h2"; static string h3 = "h3"; static string h4 = "h4";
+        static string h5 = "h5"; static string h6 = "h6"; static string h7 = "h7"; static string h8 = "h8";
+        static string h9 = "h9"; static string h10 = "h10"; static string hJack = "h11"; static string hQueen = "h12"; static string hKing = "k13";
 
         //diamonds
-        string d1 = "d1"; string d2 = "d2"; string d3 = "d3"; string d4 = "d4";
-        string d5 = "d5"; string d6 = "d6"; string d7 = "d7"; string d8 = "d8";
-        string d9 = "d9"; string d10 = "d10"; string dJack = "d11"; string dQueen = "d12"; string dKing = "d13";
+        static string d1 = "d1"; static string d2 = "d2"; static string d3 = "d3"; static string d4 = "d4";
+        static string d5 = "d5"; static string d6 = "d6"; static string d7 = "d7"; static string d8 = "d8";
+        static string d9 = "d9"; static string d10 = "d10"; static string dJack = "d11"; static string dQueen = "d12"; static string dKing = "d13";
 
         //Now clubs
-        string c1 = "c1"; string c2 = "c2"; string c3 = "c3"; string c4 = "c4";
-        string c5 = "c5"; string c6 = "c6"; string c7 = "c7"; string c8 = "c8";
-        string c9 = "c9"; string c10 = "c10"; string cJack = "c11"; string cQueen = "c12"; string cKing = "c13";
+        static string c1 = "c1"; static string c2 = "c2"; static string c3 = "c3"; static string c4 = "c4";
+        static string c5 = "c5"; static string c6 = "c6"; static string c7 = "c7"; static string c8 = "c8";
+        static string c9 = "c9"; static string c10 = "c10"; static string cJack = "c11"; static string cQueen = "c12"; static string cKing = "c13";
 
+        List<string> deck = new List<string> { c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, cJack, cQueen, cKing, d1, d2, d3, d4,
+        d5, d6, d7, d8, d9, d10, dJack, dQueen, dKing, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, hJack, hQueen, hKing, s1,
+        s2, s3, s4, s5,s6,s7, s8, s9, s10, sJack, sQueen, sKing};
+        
 
-
-
-
+        //Split deck into 2
+        
 
         
         
@@ -120,7 +123,8 @@ namespace warGame
 
             //Make the mouse visible
             IsMouseVisible = true;
-            
+            cardShuffle();
+
             base.Initialize();
         }
 
@@ -230,6 +234,7 @@ namespace warGame
                 this.Exit();
 
             // TODO: Add your update logic here
+            
 
 
             base.Update(gameTime);
@@ -255,12 +260,14 @@ namespace warGame
 
         
         
-        /*
+        
         public void cardShuffle()
         {
+            var shuffle = new Random();
+            var newDeck = deck.OrderBy(item => shuffle.Next());
 
         }
-        */
+        
         
             
             
