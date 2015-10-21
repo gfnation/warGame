@@ -92,7 +92,7 @@ namespace warGame
         static string c9 = "c9"; static string c10 = "c10"; static string cJack = "c11"; static string cQueen = "c12"; static string cKing = "c13";
 
 
-        
+        private int[] player, comp;
         
         
         
@@ -127,7 +127,8 @@ namespace warGame
             }
             
             Shuffle full = new Shuffle(deck);
-            
+            player = full.getPlayerDeck();
+            comp = full.getCompDeck();
 
             base.Initialize();
         }
