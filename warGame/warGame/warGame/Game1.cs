@@ -62,7 +62,7 @@ namespace warGame
         //s=spade, h= heart, d=diamond, c=clubs
         
         //first spades
-        static string s1 = "s1";
+        protected string s1 = "s1";
         static string s2 = "s2";
         static string s3 = "s3";
         static string s4 = "s4";
@@ -91,14 +91,8 @@ namespace warGame
         static string c5 = "c5"; static string c6 = "c6"; static string c7 = "c7"; static string c8 = "c8";
         static string c9 = "c9"; static string c10 = "c10"; static string cJack = "c11"; static string cQueen = "c12"; static string cKing = "c13";
 
-        List<string> deck = new List<string> { c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, cJack, cQueen, cKing, d1, d2, d3, d4,
-        d5, d6, d7, d8, d9, d10, dJack, dQueen, dKing, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, hJack, hQueen, hKing, s1,
-        s2, s3, s4, s5,s6,s7, s8, s9, s10, sJack, sQueen, sKing};
-        
 
-        //Split deck into 2
         
-
         
         
         
@@ -123,7 +117,17 @@ namespace warGame
 
             //Make the mouse visible
             IsMouseVisible = true;
-            cardShuffle();
+            int[] deck = new int[52]; 
+           // string[] deck =  { c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, cJack, cQueen, cKing, d1, d2, d3, d4,
+       // d5, d6, d7, d8, d9, d10, dJack, dQueen, dKing, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, hJack, hQueen, hKing, s1,
+        //s2, s3, s4, s5,s6,s7, s8, s9, s10, sJack, sQueen, sKing};
+            for (int a = 0; a < 52; a++)
+            {
+                deck[a] = a;
+            }
+            
+            Shuffle full = new Shuffle(deck);
+            
 
             base.Initialize();
         }
@@ -258,15 +262,10 @@ namespace warGame
             base.Draw(gameTime);
         }
 
-        
-        
-        
-        public void cardShuffle()
-        {
-            var shuffle = new Random();
-            var newDeck = deck.OrderBy(item => shuffle.Next());
 
-        }
+
+        
+        
         
         
             
