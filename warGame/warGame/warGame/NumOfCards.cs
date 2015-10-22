@@ -5,7 +5,7 @@ using System.Text;
 
 namespace warGame
 {
-    public class NumOfCards
+    public class NumOfCards 
     {
         private int player;
         private int comp;

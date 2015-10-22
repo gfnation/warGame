@@ -496,6 +496,15 @@
       <Output>C:\Users\kkand_000\warGame\warGame\warGame\warGame\bin\x86\Debug\Content\cardBack_blue2.xnb</Output>
       <Time>2015-06-16T20:19:26-04:00</Time>
     </Item>
+    <Item>
+      <Source>Score.spritefont</Source>
+      <Name>Score</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kkand_000\warGame\warGame\warGame\warGame\bin\x86\Debug\Content\Score.xnb</Output>
+      <Time>2015-10-22T09:55:51.4214535-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

@@ -242,3 +242,4 @@ C:\Users\kkand_000\warGame\warGame\warGame\warGame\obj\x86\Debug\warGame.csprojR
 C:\Users\kkand_000\warGame\warGame\warGame\warGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\kkand_000\warGame\warGame\warGame\warGame\obj\x86\Debug\warGame.exe
 C:\Users\kkand_000\warGame\warGame\warGame\warGame\obj\x86\Debug\warGame.pdb
+C:\Users\kkand_000\warGame\warGame\warGame\warGame\bin\x86\Debug\Content\Score.xnb

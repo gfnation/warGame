@@ -26,28 +26,24 @@ namespace warGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        
-
-
-
         //Club cards
-        Texture2D clubAce, clubTwo, clubThree, clubFour, clubFive, clubSix, clubSeven, clubEight, clubNine, clubTen,
+        public Texture2D clubAce, clubTwo, clubThree, clubFour, clubFive, clubSix, clubSeven, clubEight, clubNine, clubTen,
             clubJack, clubQueen, clubKing;
 
         //Diamond Cards
-        Texture2D diamondAce, diamondTwo, diamondThree, diamondFour, diamondFive, diamondSix, diamondSeven,
+        public Texture2D diamondAce, diamondTwo, diamondThree, diamondFour, diamondFive, diamondSix, diamondSeven,
             diamondEight, diamondNine, diamondTen, diamondJack, diamondQueen, diamondKing;
 
         //Heart Cards
-        Texture2D heartAce, heartTwo, heartThree, heartFour, heartFive, heartSix, heartSeven, heartEight, heartNine, heartTen,
+        public Texture2D heartAce, heartTwo, heartThree, heartFour, heartFive, heartSix, heartSeven, heartEight, heartNine, heartTen,
             heartJack, heartQueen, heartKing;
 
         //Spade Cards
-        Texture2D spadeAce, spadeTwo, spadeThree, spadeFour, spadeFive, spadeSix, spadeSeven, spadeEight, spadeNine, spadeTen, spadeJack, spadeQueen, spadeKing;
+        public Texture2D spadeAce, spadeTwo, spadeThree, spadeFour, spadeFive, spadeSix, spadeSeven, spadeEight, spadeNine, spadeTen, spadeJack, spadeQueen, spadeKing;
 
 
         //Card Backs
-        Texture2D compBack, playerBack;
+        public Texture2D compBack, playerBack;
 
         //Give height and width to the cards
         static int compHeight, playerHeight;
@@ -55,44 +51,11 @@ namespace warGame
         
         //Place the 2 decks across from each other
         Vector2 playerDeck = new Vector2(10.0f, 270.0f);
-        Vector2 compDeck = new Vector2(1260.0f, 270.0f);
-        
-        //give numerical values to the cards + suit 
-        //11= Jack, 12=Queen, 13=King 1=Ace
-        //s=spade, h= heart, d=diamond, c=clubs
-        
-        //first spades
-        protected string s1 = "s1";
-        static string s2 = "s2";
-        static string s3 = "s3";
-        static string s4 = "s4";
-        static string s5 = "s5";
-        static string s6 = "s6";
-        static string s7 = "s7";
-        static string s8 = "s8";
-        static string s9 = "s9";
-        static string s10 = "s10";
-        static string sJack = "s11";
-        static string sQueen = "s12";
-        static string sKing = "s13";
-
-        //Hearts
-        static string h1 = "h1"; static string h2 = "h2"; static string h3 = "h3"; static string h4 = "h4";
-        static string h5 = "h5"; static string h6 = "h6"; static string h7 = "h7"; static string h8 = "h8";
-        static string h9 = "h9"; static string h10 = "h10"; static string hJack = "h11"; static string hQueen = "h12"; static string hKing = "k13";
-
-        //diamonds
-        static string d1 = "d1"; static string d2 = "d2"; static string d3 = "d3"; static string d4 = "d4";
-        static string d5 = "d5"; static string d6 = "d6"; static string d7 = "d7"; static string d8 = "d8";
-        static string d9 = "d9"; static string d10 = "d10"; static string dJack = "d11"; static string dQueen = "d12"; static string dKing = "d13";
-
-        //Now clubs
-        static string c1 = "c1"; static string c2 = "c2"; static string c3 = "c3"; static string c4 = "c4";
-        static string c5 = "c5"; static string c6 = "c6"; static string c7 = "c7"; static string c8 = "c8";
-        static string c9 = "c9"; static string c10 = "c10"; static string cJack = "c11"; static string cQueen = "c12"; static string cKing = "c13";
+        Vector2 compDeck = new Vector2(1250.0f, 270.0f);
 
 
-        private int[] player, comp;
+        SpriteFont playerScore, compScore;
+        public int[] player, comp;
         
         
         
@@ -118,9 +81,6 @@ namespace warGame
             //Make the mouse visible
             IsMouseVisible = true;
             int[] deck = new int[52]; 
-           // string[] deck =  { c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, cJack, cQueen, cKing, d1, d2, d3, d4,
-       // d5, d6, d7, d8, d9, d10, dJack, dQueen, dKing, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, hJack, hQueen, hKing, s1,
-        //s2, s3, s4, s5,s6,s7, s8, s9, s10, sJack, sQueen, sKing};
             for (int a = 0; a < 52; a++)
             {
                 deck[a] = a;
@@ -129,6 +89,9 @@ namespace warGame
             Shuffle full = new Shuffle(deck);
             player = full.getPlayerDeck();
             comp = full.getCompDeck();
+
+
+            
 
             base.Initialize();
         }
@@ -139,6 +102,8 @@ namespace warGame
         /// </summary>
         protected override void LoadContent()
         {
+            playerScore = Content.Load<SpriteFont>("Score");
+            compScore = Content.Load<SpriteFont>("Score");
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             
@@ -239,6 +204,7 @@ namespace warGame
                 this.Exit();
 
             // TODO: Add your update logic here
+
             
 
 
@@ -257,10 +223,13 @@ namespace warGame
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
             spriteBatch.Draw(playerBack, playerDeck, Color.White);
             spriteBatch.Draw(compBack, compDeck, Color.White);
+            spriteBatch.DrawString(playerScore, "Player's cards remaining: \n" + player.Length, new Vector2(2, 1), Color.Blue);
+            spriteBatch.DrawString(compScore, "Computer's cards remaining: \n" + comp.Length, new Vector2(925, 1), Color.Red);
             spriteBatch.End();
 
 
             base.Draw(gameTime);
+           
         }
 
 
